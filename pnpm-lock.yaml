@@ -13,6 +13,7 @@ specifiers:
   rollup-plugin-terser: ^7.0.0
   sirv-cli: ^2.0.0
   svelte: ^3.0.0
+  typescript: ^4.6.4
 
 dependencies:
   html-to-text: 8.2.0
@@ -29,6 +30,7 @@ devDependencies:
   rollup-plugin-svelte: 7.1.0_urfczz6hd3bvh7smupyykzijga
   rollup-plugin-terser: 7.0.2_rollup@2.74.1
   svelte: 3.48.0
+  typescript: 4.6.4
 
 packages:
 
@@ -1175,6 +1177,12 @@ packages:
     dependencies:
       media-typer: 0.3.0
       mime-types: 2.1.35
+    dev: true
+
+  /typescript/4.6.4:
+    resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: true
 
   /unpipe/1.0.0:

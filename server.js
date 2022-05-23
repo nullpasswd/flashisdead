@@ -12,7 +12,8 @@ app.use(cors());
 const { htmlToText } = require('html-to-text');
 
 app.get('*', (req, res) => {
-    if (req.rawHeaders[3].includes('curl')) {
+    const validHeaders = ['curl', 'wget', 'axios'];
+    if (validHeaders.some((key) => req.rawHeaders[3].includes(key))) {
         var file = fs.readFileSync(path.resolve(__dirname, 'public', 'noscript.html'));
         file = htmlToText(file);
         file = file.replace(

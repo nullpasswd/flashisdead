@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 3001;
 
 const path = require('path'),
     fs = require('fs');
@@ -28,6 +28,7 @@ app.get('*', (req, res) => {
         file = file + '\n-------- flashisdead.xyz --------\n';
         return res.send(file);
     }
+    return res.redirect('http://localhost');
 });
 
 app.listen(port, async () => {

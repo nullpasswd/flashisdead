@@ -6,7 +6,7 @@
         "server": "node server.js",
         "build": "rollup -c",
         "dev": "rollup -c -w",
-        "start": "npm run server & sirv public --no-clear"
+        "start": "sirv public --no-clear --port 3000"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^17.0.0",

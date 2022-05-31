@@ -1,28 +1,28 @@
 {
-    "name": "svelte-app",
-    "version": "1.0.0",
-    "private": true,
+    "name": "flashisdead-next",
+    "version": "0.0.1",
     "scripts": {
-        "server": "node server.js",
-        "build": "rollup -c",
-        "dev": "rollup -c -w",
-        "start": "sirv public --no-clear --port 3000"
+        "dev": "svelte-kit dev",
+        "build": "svelte-kit build",
+        "package": "svelte-kit package",
+        "preview": "svelte-kit preview",
+        "prepare": "svelte-kit sync",
+        "check": "svelte-check --tsconfig ./jsconfig.json",
+        "check:watch": "svelte-check --tsconfig ./jsconfig.json --watch",
+        "docker": "pnpm run docker:prune && pnpm run docker:build && pnpm run docker:start",
+        "docker:prune": "docker kill flashisdead && docker image rm flashisdead; docker image prune -f",
+        "docker:build": "docker build . --no-cache -t flashisdead:latest -f docker/Dockerfile",
+        "docker:start": "docker run -d --rm --name flashisdead -p 3000:3000 flashisdead:latest"
     },
     "devDependencies": {
-        "@rollup/plugin-commonjs": "^17.0.0",
-        "@rollup/plugin-node-resolve": "^11.0.0",
-        "cors": "^2.8.5",
-        "express": "^4.18.1",
-        "rollup": "^2.3.4",
-        "rollup-plugin-css-only": "^3.1.0",
-        "rollup-plugin-livereload": "^2.0.0",
-        "rollup-plugin-svelte": "^7.0.0",
-        "rollup-plugin-terser": "^7.0.0",
-        "svelte": "^3.0.0",
-        "typescript": "^4.6.4"
+        "@sveltejs/adapter-auto": "next",
+        "@sveltejs/kit": "next",
+        "svelte": "^3.44.0",
+        "svelte-check": "^2.2.6",
+        "typescript": "~4.6.2"
     },
+    "type": "module",
     "dependencies": {
-        "html-to-text": "^8.2.0",
-        "sirv-cli": "^2.0.0"
+        "@sveltejs/adapter-node": "1.0.0-next.78"
     }
 }

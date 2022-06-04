@@ -20,7 +20,7 @@
 
 <svelte:head>
     <title>Flash is dead</title>
-    <link rel="icon" href="%sveltekit.assets/flash.png" />
+    <link rel="icon" href="/favicon.png" />
 </svelte:head>
 
 <header>

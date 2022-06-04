@@ -18,6 +18,11 @@
     });
 </script>
 
+<svelte:head>
+    <title>Flash is dead</title>
+    <link rel="icon" href="%sveltekit.assets/flash.png" />
+</svelte:head>
+
 <header>
     <h1>Flash is dead</h1>
     <p>But it wasn't always that way.</p>

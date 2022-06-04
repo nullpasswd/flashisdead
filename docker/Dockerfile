@@ -31,4 +31,5 @@ RUN pnpm audit fix
 COPY --from=0 /app/build ./
 
 EXPOSE 4723
+ENV PORT=4723
 CMD ["node", "./index.js"]

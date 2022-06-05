@@ -4,9 +4,13 @@ import { htmlToText } from 'html-to-text';
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
     const validHeaders = ['curl', 'wget', 'axios'];
-    if (validHeaders.some((key) => event.request.headers.get('user-agent').includes(key))) {
-        // var file: any = fs.readFileSync(path.resolve(__dirname, '../', 'static', 'noscript.html'));
-        var file: any = fs.readFileSync(new URL('../static/noscript.html', import.meta.url));
+    if (validHeaders.some((key) => event.request.headers.get('user-agent')?.includes(key))) {
+        var file: any;
+        try {
+            file = fs.readFileSync(new URL('../../../../static/noscript.html', import.meta.url));
+        } catch (e) {
+            file = fs.readFileSync(new URL('../static/noscript.html', import.meta.url));
+        }
         file = htmlToText(file);
         file = file.replace(
             "FLASH IS DEAD\n\nBut it wasn't always that way.",

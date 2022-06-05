@@ -17,12 +17,15 @@
     "devDependencies": {
         "@sveltejs/adapter-auto": "next",
         "@sveltejs/kit": "next",
+        "@types/html-to-text": "^8.1.0",
+        "@types/node": "^17.0.39",
         "svelte": "^3.44.0",
         "svelte-check": "^2.2.6",
         "typescript": "~4.6.2"
     },
     "type": "module",
     "dependencies": {
-        "@sveltejs/adapter-node": "1.0.0-next.78"
+        "@sveltejs/adapter-node": "1.0.0-next.78",
+        "html-to-text": "^8.2.0"
     }
 }

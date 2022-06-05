@@ -1,3 +1,4 @@
+import path from 'path';
 import fs from 'fs';
 import { htmlToText } from 'html-to-text';
 
@@ -9,7 +10,15 @@ export async function handle({ event, resolve }) {
         try {
             file = fs.readFileSync(new URL('../../../../static/noscript.html', import.meta.url));
         } catch (e) {
-            file = fs.readFileSync(new URL('../static/noscript.html', import.meta.url));
+            try {
+                file = fs.readFileSync(new URL('../../../static/noscript.html', import.meta.url));
+            } catch (e) {
+                try {
+                    file = fs.readFileSync(new URL('../../static/noscript.html', import.meta.url));
+                } catch (e) {
+                    file = fs.readFileSync(new URL('../static/noscript.html', import.meta.url));
+                }
+            }
         }
         file = htmlToText(file);
         file = file.replace(

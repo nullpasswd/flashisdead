@@ -1,11 +1,13 @@
 <script>
     import { onMount } from 'svelte';
 
+    const oneDay = 1000 * 3600 * 24;
+
     var oldDate = new Date('12/31/2020');
     var currentDate = new Date();
 
     var timeDiff = currentDate.getTime() - oldDate.getTime();
-    $: days = Math.floor(timeDiff / (1000 * 3600 * 24));
+    $: days = Math.round(timeDiff / oneDay);
 
     onMount(() => {
         const interval = setInterval(() => {

@@ -1,4 +1,3 @@
-import path from 'path';
 import fs from 'fs';
 import { htmlToText } from 'html-to-text';
 

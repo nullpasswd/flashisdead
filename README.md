@@ -1,37 +1,23 @@
-# flash is dead
+# Tiny Tuba
 
-Svelte site explaining flash being dead, a wonderful platform for an old era now lost to time. This page explains that in a concise manner.
+The death of Flash, a wonderful platform for an old era now lost to time. 🪦
 
-## Deploy the site
+## Quickstart
 
-Requirements: [Node.js](https://nodejs.org), Git, [PNPM](https://pnpm.io). Use macOS or Linux/WSL.
+Requires Node and pnpm.
 
-After installing everything, check to ensure the commands exist in your system. If you get a "command not found" error, install the requirements properly and try again.
+Clone the repo and install all the necessary packages:
 
-```sh
-which node && which git && which pnpm
+```bash
+npx degit nullpasswd/flashisdead flashisdead && \
+    cd flashisdead && \
+    pnpm i
 ```
 
-Clone the repository, enter the newly-cloned repo, and install the dependencies
+### Production setup
 
-```sh
-git clone https://github.com/boxsux/flashisdead && cd flashisdead && pnpm i
-```
+This project uses [@sveltejs/adapter-node](https://www.npmjs.com/package/@sveltejs/adapter-node) for production.
 
-If you're contributing, use live reload
+To build the app, run `npm run build` inside the root folder of this project.
 
-```sh
-pnpm run dev
-```
-
-Or if you just want to build for static use
-
-```sh
-pnpm run build
-```
-
-Start the site after building it
-
-```
-pnpm run start
-```
+After that's done, you can run the compiled website with `node build/index.js`.
